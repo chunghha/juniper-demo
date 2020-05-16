@@ -1,0 +1,21 @@
+[package]
+name = "juniper-demo"
+version = "0.1.0"
+authors = ["Chris Ha <chunghha@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dotenv = "0.15"
+dotenv_codegen = "0.15"
+futures = { version = "0.3", features = ["compat"] }
+futures-macro = "=0.3"
+juniper = { git = "https://github.com/graphql-rust/juniper", branch = "async-await", features = ["async"] }
+log = "0.4"
+pretty_env_logger = "0.4"
+serde_json = "1.0"
+tokio = { version = "0.2", features = ["macros"] }
+tokio-postgres = { version = "0.5", features = ["with-uuid-0_8"] }
+uuid = { version = "0.8", features = ["v4"] }
+warp = "0.2"
