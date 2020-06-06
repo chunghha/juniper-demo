@@ -1,12 +1,12 @@
 use tokio_postgres::NoTls;
 
 fn db_connection_string() -> String {
-    return "host=".to_owned()
+    "host=".to_owned()
         + &dotenv!("DB_HOST").to_owned()
         + " user="
         + &dotenv!("DB_USER").to_owned()
         + " password="
-        + &dotenv!("DB_PASS").to_owned();
+        + &dotenv!("DB_PASS").to_owned()
 }
 
 pub async fn get_db_client() -> tokio_postgres::Client {
@@ -38,5 +38,5 @@ pub async fn get_db_client() -> tokio_postgres::Client {
         .await
         .expect("Could not create table");
 
-    return client;
+    client
 }
